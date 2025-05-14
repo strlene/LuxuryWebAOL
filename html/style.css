@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F1EFEC;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-top {
+  justify-content: center;
+  display: flex;
+}
+
+.navbar-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1EFEC;
+  padding: 1rem;
+  gap: 1rem;
+  font-size: 20px
+
+}
+
+.logo {
+  width: clamp(73px, 10vw, 140px);
+  height: auto;
+}
+
+.navbar-item a.active {
+  border-bottom: 1px solid #000;
+  padding-bottom: 4px; 
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.banner-top {
+  /* image sourcenya */
+  background-image: url(../assets/gucci-leather-jacket.jpg);
+  /* biar cover the entire div, mungkin ke crop, tp ga mungkin ke distort.  */
+  background-size: cover; 
+  /* Imgage aligned di atas tengah */
+  background-position: center;
+  /* ukurannya */
+  height: 683px;
+  width: 100%;
+  position: relative;
+}
+
+.banner-text {
+
+  color: #F1EFEC;
+  font-size: 36px;
+  /* jadi floating, berdasarkan parentnya  */
+  position: absolute;
+  /* top banner taxt jadi ada di tengah (50%nya parent vertically)*/
+  top: 50%;
+  /* left banner text jadi ada di tengah (50%nya parent horizontally) */
+  left: 50%;
+  /* pindahin posisinya, jadi di center parentnya, 50 persen ke kanan dan 50 persen ke atas */
+  transform: translate(-50%, -50%);
+  /* jadi kan di * {}, itu ada background color, nah background ini bakal di inherit sama banner-text, jadi kita harus set ulang jadi transparent*/
+  background-color: transparent;
+}
+
+.bold {
+  /* sama juga yg ini background colornya di * ke inherit, jadi harus di set ulang */
+  background-color: transparent;
+  font-weight: 700;
+}
+
