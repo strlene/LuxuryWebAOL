@@ -19,7 +19,7 @@ function createHeader() {
   const hamburger = document.createElement('button');
   hamburger.className = 'hamburger';
   hamburger.setAttribute('aria-label', 'Toggle navigation');
-  hamburger.innerHTML = '&#9776;'; // ☰ symbol
+  hamburger.innerHTML = '&#9776;'; // hamburger symbol
 
   // Navigation
   const nav = document.createElement('nav');

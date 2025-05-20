@@ -16,10 +16,12 @@ main {
   padding: 0 5%;
 }
 
+
+
 .hero-image {
   width: 100%;
   height: 300px;
-  background: url('../assets/christian-building.jpg') center/cover no-repeat;
+  background: url('https://lifeinitaly.com/wp-content/uploads/2024/09/crop.jpg') center/cover no-repeat;
 }
 
 .about-columns {
@@ -43,6 +45,21 @@ main {
 .column h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+}
+.col {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-bottom: 3vh; 
+}
+
+.p1 {
+    padding: 3vh;
+    margin: 20px 0;
+    margin-bottom: 3vh;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    color: #666;
+    text-align: justify;
 }
 
 .contact-info {

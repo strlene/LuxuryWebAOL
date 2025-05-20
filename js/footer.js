@@ -1,4 +1,3 @@
-// footer.js - Footer component for all pages
 
 function createFooter() {
     // Create the footer element

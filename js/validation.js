@@ -190,5 +190,4 @@ function initFormValidation() {
     }
 }
 
-// Initialize validation when DOM is ready
 document.addEventListener('DOMContentLoaded', initFormValidation);

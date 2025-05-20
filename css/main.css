@@ -39,7 +39,8 @@ body {
 
 /* Header styles */
 header {
-    padding: 20px 5%;
+    max-width: 100%;
+    padding: 15px 5%;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
@@ -89,6 +90,8 @@ main {
     flex: 1;
     padding: 0;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
@@ -103,7 +106,6 @@ footer {
     background-color: var(--dark-color);
     color: var(--secondary-color);
     padding: 30px 5%;
-    margin-top: 30px;
     width: 100%;
     display: block;
 }
@@ -145,6 +147,7 @@ footer {
 }
 
 .hero-overlay {
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -198,15 +201,16 @@ footer {
 
 .btn-full {
     width: 100%;
+    margin-bottom: 5px;
 }
 
 /* Form styles */
 .form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
+    position: relative;
+    padding: 32px;
+    margin: 0;
+    background-color: white;
+    border-radius: 12px;
 }
 
 .form-group {
@@ -214,29 +218,40 @@ footer {
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
     font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(212, 193, 154, 0.2);
+    background-color: white;
 }
 
 .form-group .error {
-    color: var(--error-color);
+    color: #e74c3c;
     font-size: 14px;
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: rgba(200, 100, 100, 0.1);
-    border-radius: 4px;
-    border-left: 3px solid var(--error-color);
+    margin-top: 6px;
+    padding: 6px 12px;
+    background-color: rgba(231, 76, 60, 0.08);
+    border-radius: 6px;
+    border-left: 3px solid #e74c3c;
 }
 
 .form-group input.invalid {
@@ -249,7 +264,8 @@ footer {
 
 .radio-group {
     display: flex;
-    gap: 15px;
+    flex-direction: column; /* Stack radio buttons vertically */
+    gap: 10px; /* Smaller gap between options */
 }
 
 .radio-group label {
@@ -259,7 +275,9 @@ footer {
     padding: 8px 15px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
+    margin-right: 0; /* Remove right margin */
 }
+
 
 .radio-group label input {
     margin-right: 8px;
@@ -412,7 +430,141 @@ footer {
     margin-bottom: 40px;
 }
 
-.hamburger {
+.designer-profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 3vh 2vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.designer-profile-left {
+    flex: 1 1 40%;
+    max-width: 500px;
+}
+
+.designer-profile-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.designer-profile-right {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333;
+}
+
+.designer-profile-right h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.designer-title {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 1.5rem;
+}
+
+.designer-quote {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.designer-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.designer-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.designer-link:hover {
+    color: #888;
+}
+
+.event-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+.event-hero {
+    background-image: url('https://assets.vogue.com/photos/5891b37a97a3db337a24c0c8/master/pass/gucci-fall-2105-collection-atmosphere-1.jpg');
+    background-size: cover;
+    /* overlay: rgba(0, 0, 0, 0.5); */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px; 
+    box-sizing: border-box;
+}
+
+.event-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.event-registration {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 520px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    max-height: 85vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.input-error {
+    border-color: var(--error-color) !important;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.checkbox-wrapper input {
+    margin-right: 10px;
+    margin-top: 5px;        
+}
+
+.checkbox-wrapper .error {
+    margin-top: 5px;
+}
+    
+    .hamburger {
   display: none;
   background: none;
   border: none;
@@ -421,20 +573,14 @@ footer {
   color: var(--primary-color);
 }
 
-.product-card:hover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0.15));
-    pointer-events: none;
-}
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
 
     .hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: block;
     align-self: flex-end;
      }
@@ -442,6 +588,9 @@ footer {
     header {
         flex-direction: column;
         padding: 15px;
+        display: block;
+        margin: 0px;
+        text-align: center;
     }
     
     .logo {
@@ -507,5 +656,13 @@ footer {
 
     nav.nav-open {
         display: block;
+    }
+    .radio-group {
+        flex-direction: row; /* Horizontal layout on larger screens */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+    }
+    
+    .radio-group label {
+        margin-right: 10px; /* Add some spacing between options */
     }
 }

@@ -125,6 +125,13 @@ const products = [
   }
 ];
 
+
+let displayProducts = products;
+if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+    displayProducts = products.slice(0, 4);
+}
+
+
 // Create a product card component
 function createProductCard(product) {
     const card = document.createElement('div');
@@ -155,7 +162,6 @@ function createProductCard(product) {
     
     // Add click event to the entire card
     card.addEventListener('click', (e) => {
-        // Prevent default only if the click wasn't on the view button
         if (!e.target.classList.contains('btn')) {
             e.preventDefault();
             window.location.href = `/productdetail/index.html?id=${product.id}`;
@@ -172,11 +178,7 @@ function renderProductCards(containerId, filterCategory = null) {
     
     let productsToShow = products;
     
-    // Apply filter if provided
-    if (filterCategory) {
-        productsToShow = products.filter(product => product.category === filterCategory);
-    }
-    
+
     // Clear the container
     container.innerHTML = '';
     
@@ -271,6 +273,28 @@ function initQuantityControls() {
     });
 }
 
+
+
+function initCartButtons() {
+    const addToCartBtn = document.getElementById('add-to-cart');
+    const buyNowBtn = document.getElementById('order-now');
+
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            alert("✅ Successfully added to cart!");
+        });
+    }
+
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', () => {
+            alert("🚀 Order placed successfully!");
+        });
+    }
+}
+
+// Start listenig to the DOM
+document.addEventListener("DOMContentLoaded", initCartButtons);
+
 // Document ready function
 document.addEventListener('DOMContentLoaded', () => {
     // Check what page we're on and initialize accordingly
@@ -288,8 +312,3 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProductCards('featured-products');
     }
 });
-
-let displayProducts = products;
-if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
-    displayProducts = products.slice(0, 4);
-}
